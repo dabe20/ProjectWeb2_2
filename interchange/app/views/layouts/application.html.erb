@@ -2,11 +2,33 @@
 <html>
 <head>
   <title>Interchange</title>
+  <link href='http://fonts.googleapis.com/css?family=Fredericka+the+Great' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+	<header>
+		<nav class="be-red white large-padding">
+			<ul class="no-list row center-xs middle-xs">
+				<li class="col-md">
+					<h1 class="no-margin" id="logo">IntϾɧαϰᵷᶒ</h1>
+				</li>
+				<li class="col-md">
+					<%= link_to "Inicio", root_path %>
+				</li>
+				<li class="col-md">
+					Productos
+				</li>
+				<li class="col-md">
+					Transacciones
+				</li>
+				<li class="col-md">
+					Ofertas
+				</li>
+			</ul>
+		</nav>
+	</header>
 
 <%= yield %>
 
