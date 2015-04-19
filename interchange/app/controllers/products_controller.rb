@@ -19,8 +19,11 @@ class ProductsController < ApplicationController
 		@product = Product.new(name: params[:product][:name], 
 							   description: params[:product][:description], 
 							   state: params[:product][:state])
-		@product.save
-		redirect_to @product
+		if @product.save
+			redirect_to @product
+		else
+			render :new
+		end
 	end
 
 	#PUT /products/:id

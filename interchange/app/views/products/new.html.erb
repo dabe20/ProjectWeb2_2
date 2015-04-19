@@ -1,6 +1,11 @@
 <div style="width:80%;margin:0 auto;">
 	<h1>Crear Producto</h1>
 	<%= form_for(@product) do |f| %>
+		<% @product.errors.full_messages.each do |message| %>
+			<div class="be-red top-space">
+				* <%= message %>
+			</div>
+		<%end%>
 	<div class="field">
 		<%= f.text_field :name, placeholder: "Nombre producto", class:"form-control" %>
 	</div>
@@ -15,4 +20,3 @@
 	</div>
 <%end%>
 </div>
-
