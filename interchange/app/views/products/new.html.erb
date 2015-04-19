@@ -1,0 +1,18 @@
+<div style="width:80%;margin:0 auto;">
+	<h1>Crear Producto</h1>
+	<%= form_for(@product) do |f| %>
+	<div class="field">
+		<%= f.text_field :name, placeholder: "Nombre producto", class:"form-control" %>
+	</div>
+	<div class="field">
+		<%= f.text_field :description, placeholder: "categoría", class:"form-control" %>
+	</div>
+	<div class="field">
+		<%= f.text_field :state, placeholder: "estado", class:"form-control" %>
+	</div>
+	<div class="field">
+		<%= f.submit "Guardar", class:"btn white" %>
+	</div>
+<%end%>
+</div>
+

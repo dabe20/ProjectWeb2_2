@@ -12,7 +12,7 @@ a,a:visited{
 .no-margin{
 	margin: 0px;
 }
-.be-red{
+.be-blue{
 	background-color: #547DA6;
 }
 .white{
@@ -20,4 +20,25 @@ a,a:visited{
 }
 .large-padding{
 	padding: 8px 5px;
+}
+.field{
+	margin-top: 1em; 
+}
+.form-control{
+	border: none;
+	border-bottom: 1px solid;
+	outline: none;
+	width: 50%;
+	display: block;
+	padding: 10px 0px;
+	font-size: 1.2em; 
+}
+.btn{
+	font-size: 0.90em;
+	background-color: #C2CC5C;
+	border: none;
+	outline: none;
+	text-transform: uppercase;
+	cursor: pointer;
+	padding: 10px 12px;
 }
