@@ -936,6 +936,7 @@
     -ms-flex-preferred-size: 16.666666667%;
     flex-basis: 16.666666667%;
     max-width: 16.666666667%;
+    border: 1px solid #3E7769;
   }
 
   .col-lg-3 {
