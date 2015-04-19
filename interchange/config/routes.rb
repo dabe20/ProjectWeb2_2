@@ -2,14 +2,14 @@ Rails.application.routes.draw do
 
   resources :products 
 =begin
-    get "/products"
-    post "/products"
-    delete "/products"
-    get "/products/:id"
-    get "/products/new"
-    get "/products/:id/edit"
-    patch "/products/:id"
-    put "/products/:id"
+    get "/products" index
+    post "/products" create
+    delete "/products/:id" destroy
+    get "/products/:id" show
+    get "/products/new" new
+    get "/products/:id/edit" edit
+    patch "/products/:id" update
+    put "/products/:id" update
 =end
 
   # The priority is based upon order of creation: first created -> highest priority.

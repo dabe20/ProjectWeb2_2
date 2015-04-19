@@ -3,6 +3,7 @@
 		<h1><%= product.name %></h1>
 		<%= product.description %>
 		<strong><%= product.state %></strong>
+		<ul><li><%= link_to "Eliminar", product, method: :delete %></li></ul>
 	</div>
 <%end%>
 
