@@ -21,7 +21,7 @@ class ProductsController < ApplicationController
 	#POST /products
 	def create
 		#INSERT INTO
-		@product = Product.new(product_params)
+		@product = current_user.products.new(product_params)
 		if @product.save
 			redirect_to @product
 		else
