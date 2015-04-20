@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
-  
+  before_action :authenticate_user!, except: [:show,:index]
+  before_action :set_product, except: [:index,:new,:create]
   #GET  /products
 	def index
 		# Obtiene todos los registros SELECT * FROM products
@@ -7,10 +8,7 @@ class ProductsController < ApplicationController
 	end
 	#GET /products/:id
 	def show
-		# Encontrar un registro por id
-		@product = Product.find(params[:id])
-		#Where
-		#Product.where(" id = ?", params[:id])
+		@product.update_visits_count
 	end
 
 	#GET /products/new
@@ -30,14 +28,12 @@ class ProductsController < ApplicationController
 	end
 
 	def edit
-		@product = Product.find(params[:id])
+
 	end
 
 	#PUT /products/:id
 	def update
-		#UPDATE
-		# @product.update_attributes({name: 'Nuevo nombre'})
-		@product = Product.find(params[:id])
+		
 		if @product.update(product_params)
 			redirect_to @product
 		else
@@ -48,12 +44,20 @@ class ProductsController < ApplicationController
 	#DELETE /products/:id
 	def destroy
 		#DELETE FROM products
-		@product = Product.find(params[:id])
+
 		@product.destroy #Destroy : elimina el objeto de la BD
 		redirect_to products_path
 	end
 
 	private
+
+	#def validate_user
+	#	redirect_to new_user_session_path, notice: "Necesitas iniciar sesión"
+	#end
+
+	def set_product
+		@product = Product.find(params[:id])
+	end
 
 	def product_params
 		params.require(:product).permit(:name,:description,:state)

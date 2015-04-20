@@ -3,6 +3,7 @@
 	<% unless @product.user.nil? %>
 		<p>Publicado por: <%= @product.user.email %></p>
 	<%end%>
+	<p>Visitas: <%= @product.visits_count %></p>
 	<%= @product.description %>
 	<strong><%= @product.state %></strong> 
 	<li><%= link_to "Editar", edit_product_path(@product) %></li>
