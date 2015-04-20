@@ -21,18 +21,22 @@ a,a:visited{
 .be-blue{
 	background-color: #547DA6;
 }
+.be-green{
+	background-color: #0B610B !important;
+}
 .white{
 	color: #F0F3F3;
 }
 .large-padding{
 	padding: 8px 5px;
 }
-.field{
+.field,.top-space,.actions{
 	margin-top: 1em; 
 }
-.top-space{
-	margin-top: 1em;	
+.text-left{
+	text-align: left;
 }
+
 .form-control{
 	border: none;
 	border-bottom: 1px solid;
