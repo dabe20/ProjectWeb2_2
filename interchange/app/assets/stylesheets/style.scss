@@ -3,7 +3,7 @@ html,body{
 	font-family: 'Fredericka the Great', cursive;
 }
 a,a:visited{
-	color:inherit;
+	color: inherit;
 	text-decoration: none;
 }
 #logo{
@@ -11,6 +11,9 @@ a,a:visited{
 }
 .no-margin{
 	margin: 0px;
+}
+.del{
+	color: #E70C3C !important;
 }
 .be-red{
 	background-color: #CFBCFC;

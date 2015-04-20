@@ -21,9 +21,7 @@ class ProductsController < ApplicationController
 	#POST /products
 	def create
 		#INSERT INTO
-		@product = Product.new(name: params[:product][:name], 
-							   description: params[:product][:description], 
-							   state: params[:product][:state])
+		@product = Product.new(product_params)
 		if @product.save
 			redirect_to @product
 		else
@@ -31,10 +29,20 @@ class ProductsController < ApplicationController
 		end
 	end
 
+	def edit
+		@product = Product.find(params[:id])
+	end
+
 	#PUT /products/:id
 	def update
 		#UPDATE
 		# @product.update_attributes({name: 'Nuevo nombre'})
+		@product = Product.find(params[:id])
+		if @product.update(product_params)
+			redirect_to @product
+		else
+			render :edit
+		end
 	end
 
 	#DELETE /products/:id
@@ -44,4 +52,11 @@ class ProductsController < ApplicationController
 		@product.destroy #Destroy : elimina el objeto de la BD
 		redirect_to products_path
 	end
+
+	private
+
+	def product_params
+		params.require(:product).permit(:name,:description,:state)
+	end
+
 end

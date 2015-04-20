@@ -1,0 +1,21 @@
+<% name ||= "Crear" %>
+<h1><%= name %> producto</h1>
+<%= form_for(@product) do |f| %>
+	<% @product.errors.full_messages.each do |message| %>
+		<div class="be-red top-space">
+			* <%= message %>
+		</div>
+		<%end%>
+	<div class="field">
+		<%= f.text_field :name, placeholder: "Nombre producto", class:"form-control" %>
+	</div>
+	<div class="field">
+		<%= f.text_field :description, placeholder: "categoría", class:"form-control" %>
+	</div>
+	<div class="field">
+		<%= f.text_field :state, placeholder: "estado", class:"form-control" %>
+	</div>
+	<div class="field">
+		<%= f.submit "Guardar", class:"btn white" %>
+	</div>
+<%end%>
