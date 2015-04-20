@@ -8,10 +8,10 @@
 				<%= link_to "Inicio", root_path %>
 			</li>
 			<li class="col-md">
-				Productos
+				<%= link_to "Productos", "products#index" %>
 			</li>
 			<li class="col-md">
-				Transacciones
+				<%= link_to "Transacciones", "transactions#index" %>
 			</li>
 			<% if user_signed_in? %>
 			<li class="col-md">
