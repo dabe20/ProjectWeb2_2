@@ -1,5 +1,8 @@
 <div class="center-lg">
 	<h1><%= @product.name %></h1>
+	<% unless @product.user.nil? %>
+		<p>Publicado por: <%= @product.user.email %></p>
+	<%end%>
 	<%= @product.description %>
 	<strong><%= @product.state %></strong> 
 	<li><%= link_to "Editar", edit_product_path(@product) %></li>
